@@ -42,3 +42,8 @@ console.log("shift()");
 var myStartingArrayShiftValue = myStartingArray.shift();
 console.log(myStartingArrayShiftValue);
 console.log(myStartingArray);
+
+// unshift - add element to the start of an array
+console.log("unshift()");
+myStartingArray.unshift(100);
+console.log(myStartingArray);
