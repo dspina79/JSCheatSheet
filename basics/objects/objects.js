@@ -24,3 +24,13 @@ console.log(myCat);
 delete myCat.color;
 console.log('After the removal:');
 console.log(myCat);
+
+// check if an object has a property using hasOwnProperty
+var hasTails = myCat.hasOwnProperty('tail');
+console.log('Does the cat have a tail property? ' + hasTails);
+
+var possibleProperties = ["name", "age", "color", "hair", "tail", "legs", "purrs"];
+console.log("\nProperty Checker");
+for (var prop of possibleProperties) {
+    console.log(prop + "? " + myCat.hasOwnProperty(prop));
+}
