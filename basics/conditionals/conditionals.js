@@ -111,3 +111,25 @@ switch(mySwitchVar) {
         console.log('Unknown');
         break;
 }
+
+// fall-through on switch
+var currentChapter = 5;
+switch (currentChapter) {
+    case 1:
+    case 2:
+    case 3:
+        console.log('Start of the book');
+        break;
+    case 4:
+    case 5:
+    case 6:
+        console.log('Middle of the book');
+        break;
+    case 7:
+    case 8:
+        console.log('End of the book');
+        break;
+    default:
+        console.log('I don\'t know what you\'re reading.');
+        break;
+}

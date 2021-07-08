@@ -212,4 +212,55 @@ switch(mySwitchVar) {
         console.log('Unknown');
         break;
 }
+
+// fall-through on switch
+var currentChapter = 5;
+switch (currentChapter) {
+    case 1:
+    case 2:
+    case 3:
+        console.log('Start of the book');
+        break;
+    case 4:
+    case 5:
+    case 6:
+        console.log('Middle of the book');
+        break;
+    case 7:
+    case 8:
+        console.log('End of the book');
+        break;
+    default:
+        console.log('I don\'t know what you\'re reading.');
+        break;
+}
+```
+## Objects
+```javascript
+// basic object notations - dot (.) and bracket
+
+var myCat = {
+    name: 'Charlotte',
+    type: 'tabby',
+    age: 8,
+    legs: 4,
+    tail: 1,
+    purrs: true
+};
+
+console.log(myCat.name);
+console.log(myCat.purs);
+console.log(myCat["name"]);
+console.log(myCat["purs"]);
+
+// adding properties
+myCat.color = "black";
+console.log(myCat + " is " + myCat.color);
+
+// removing properties
+console.log('Before the removal:');
+console.log(myCat);
+delete myCat.color;
+console.log('After the removal:');
+console.log(myCat);
 ```
