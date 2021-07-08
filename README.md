@@ -273,4 +273,54 @@ console.log("\nProperty Checker");
 for (var prop of possibleProperties) {
     console.log(prop + "? " + myCat.hasOwnProperty(prop));
 }
+
+/*
+    COMPLEX OBJECTS
+*/
+
+var myWorkGroup = {
+    "department" : "Information Technologies",
+    "reports_to" : "Executive Team",
+    "members" : [
+        {
+            "first_name" : "Helen",
+            "last_name" : "Smith",
+            "employee_id" : 1234899,
+            "skills" : [
+                "Java",
+                "SQL",
+                "Project Management"
+            ],
+            "manager_id" : 111111
+        },
+        {
+            "first_name" : "Sharon",
+            "last_name" : "Monshare",
+            "employee_id" : 12849120,
+            "skills" : [
+                "JavaScript",
+                "SaaS",
+                "CI/CD"
+            ],
+            "manager_id" : 111111
+        },
+        {
+            "first_name" : "Louise",
+            "last_name" : "Holderman",
+            "employee_id" : 111111,
+            "skills" : [
+                "Team Building",
+                "Architecture",
+                "Project Management"
+            ],
+            "manager_id" : 823749
+        }
+    ]
+};
+
+// assignment
+var departmentName = myWorkGroup.department;
+var secondPersonSkills = myWorkGroup.members[1].skills;
+
+
 ```
