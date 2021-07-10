@@ -45,3 +45,17 @@ function factorial(x) {
 }
 
 console.log("5! = " + factorial(5));
+
+// number ranges
+var rangeArray = [];
+
+function generateRange(startNum, endNum, step) {
+    if (startNum <= endNum) {
+        rangeArray.push(startNum);
+        generateRange(startNum += step, endNum, step); 
+    }
+
+    return rangeArray;
+}
+
+console.log(generateRange(2, 14, 3)); // prints [ 2, 5, 8, 11, 14 ]

@@ -1,5 +1,74 @@
 # JavaScript Cheat Sheet
-## Arrays
+## Basics
+### Assignment and Math
+```javascript
+/*
+    Basic Syntax
+*/
+
+// Comments
+
+// <-- two slashes denotes a single line comment
+
+/*
+    asterisk and slashes allow 
+    for multiline comments
+*/
+
+
+// variable assignment (pre-ES6)
+
+var x; // identifies variable with no initial value
+var y = 5; // initializes variable y with value 5
+
+// number variables - simple
+var intValue = 16; // int variable
+var floatValue = 89.2340; // float variable
+
+// string assignment
+var myStirng = "This is a string";
+
+// you can use double or single quotes as long as they match
+var mySingleQuotes = 'This is using single quotes';
+var myDoubleQuotes = "This is using double quotes";
+
+// single quotes can be in double quotes
+var mixedQuotes = "The coders call this languages 'JavaScript'";
+
+/*
+    Basic Math Operations
+*/
+
+// addition
+var a = 5 + 8;
+
+// subtraction
+var b = 6 - 4;
+
+// multiplication
+var c = 9 * 2;
+
+// division
+var d = 18/6;
+
+// increment operations
+var simpleNumber = 5;
+simpleNumber++; // simpleNumber is now 6
+simpleNumber--; // simpleNumber is now back to 5;
+
+// compound math assignment
+simpleNumber += 6; // same as simpleNumber = simpleNumber + 6;
+simpleNumber -= 6; // same as simpleNumber = simpleNumber - 6;
+simpleNumber *= 6; // same as simpleNumber = simpleNumber * 6;
+simpleNumber /= 6; // same as simpleNumber = simpleNumber / 6;
+
+// string concatenation
+var myName = "Dave";
+var greetingPrefix = "Hello";
+var greeting = greetingPrefix + ", " + myName;
+console.log(greeting); // outputs "Hello, Dave";
+```
+### Arrays
 ```javascript
 // basic array nomenclature
 
@@ -51,7 +120,7 @@ console.log("unshift()");
 myStartingArray.unshift(100);
 console.log(myStartingArray);
 ```
-## Functions
+### Functions
 ```javascript
 // basic function declaration and use
 
@@ -97,7 +166,7 @@ testVariableScope();
 console.log(myFixedQueue); // [2,3,4,5,6,7]
 console.log(myQueueLength); // 6
 ```
-## Conditionals
+### Conditionals
 ```javascript
 // basic condition checking
 var myBoolean = true;
@@ -235,7 +304,7 @@ switch (currentChapter) {
         break;
 }
 ```
-## Objects
+### Objects
 ```javascript
 // basic object notations - dot (.) and bracket
 
@@ -324,7 +393,7 @@ var secondPersonSkills = myWorkGroup.members[1].skills;
 
 
 ```
-## Loops and Recursion
+### Loops and Recursion
 ```javascript
 // basic while loop
 var x = 5;
@@ -373,8 +442,22 @@ function factorial(x) {
 }
 
 console.log("5! = " + factorial(5));
+
+// number ranges
+var rangeArray = [];
+
+function generateRange(startNum, endNum, step) {
+    if (startNum <= endNum) {
+        rangeArray.push(startNum);
+        generateRange(startNum += step, endNum, step); 
+    }
+
+    return rangeArray;
+}
+
+console.log(generateRange(2, 14, 3)); // prints [ 2, 5, 8, 11, 14 ]
 ```
-## Specialized Functions and Operators
+### Specialized Functions and Operators
 ```javascript
 /*
     Specialized Functions and Operators
