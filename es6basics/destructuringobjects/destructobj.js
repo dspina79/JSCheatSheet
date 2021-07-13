@@ -19,3 +19,17 @@ var personLastName = myPerson.lastName;
 var {firstName, lastName} = myPerson;
 console.log(firstName); // outputs "Dean"
 console.log(lastName); // outputs "Smith"
+
+
+// destructuring with different local variable names
+const myCat = {
+    name: "Fluffy",
+    type: "American Shorthair",
+    favoriteFood: "wet food"
+};
+
+// format: {objectKey: localVar} = object
+
+const {name: catName, type: catType} = myCat;
+console.log(catName); // outputs "Fluffy"
+console.log(catType); // outputs "American Shorthair"

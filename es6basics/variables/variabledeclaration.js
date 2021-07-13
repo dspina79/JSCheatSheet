@@ -83,5 +83,3 @@ try {
 } catch(error) {
     console.log("Error caught when attempting object update: " + error);
 }
-
-

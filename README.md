@@ -587,9 +587,6 @@ try {
 } catch(error) {
     console.log("Error caught when attempting object update: " + error);
 }
-
-
-
 ```
 ### Arrow Functions
 ```javascript
@@ -673,7 +670,6 @@ console.log(myArray); // outputs [1,3,7,9,11]
 console.log(mySecondArray); // outputs [1,3,7,9,11]
 // compare using stringify for equality
 console.log(JSON.stringify(myArray) === JSON.stringify(mySecondArray)); // true
-
 ```
 ### Destructuring Objects
 ```javascript
@@ -698,4 +694,18 @@ var personLastName = myPerson.lastName;
 var {firstName, lastName} = myPerson;
 console.log(firstName); // outputs "Dean"
 console.log(lastName); // outputs "Smith"
+
+
+// destructuring with different local variable names
+const myCat = {
+    name: "Fluffy",
+    type: "American Shorthair",
+    favoriteFood: "wet food"
+};
+
+// format: {objectKey: localVar} = object
+
+const {name: catName, type: catType} = myCat;
+console.log(catName); // outputs "Fluffy"
+console.log(catType); // outputs "American Shorthair"
 ```
