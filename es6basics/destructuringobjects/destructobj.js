@@ -33,3 +33,31 @@ const myCat = {
 const {name: catName, type: catType} = myCat;
 console.log(catName); // outputs "Fluffy"
 console.log(catType); // outputs "American Shorthair"
+
+// Destructure Arrays
+// similar pattern
+const myArr = [1, 2, 3, 5, 7, 11, 13];
+let [a, b, c, d] = myArr;
+console.log(a); // outputs 1
+console.log(d); // outputs 5
+
+// also allows for quick swapping
+[a, d] = [d, a];
+console.log(a); // outputs 5
+console.log(d); // outputs 1
+
+// using swap operator
+const [x, y, ...arr] = myArr;
+console.log(x); // outputs 1
+console.log(y); // outputs 2
+console.log(arr) // outputs [3, 5, 7, 11];
+
+// destructuring in a method
+const myTriangle = {
+    type: "right",
+    base: 4,
+    height: 3
+}
+
+const area = ({base, height}) => (base * height) / 2.0;
+console.log(area(myTriangle)); // outputs 6
