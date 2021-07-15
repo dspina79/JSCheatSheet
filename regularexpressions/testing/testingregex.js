@@ -30,3 +30,14 @@ const helenResult = regexRocks.test(helenFinds);
 console.log(`Rachel result: ${rachelResult}`); // outputs true
 console.log(`Mark result: ${markResult}`); // outputs true
 console.log(`Helen result: ${helenResult}`); // outputs false
+
+// Ignoring case
+// adding "i" at the end of the expression will ignore casing on
+// word matches
+
+const regexFriendlyExact = /friendly/; // must match case sensitive
+const regexFriendlyInsensitive = /friendly/i; // can match any casing
+
+console.log(regexFriendlyExact.test("John's username is FRiendlyGuy3929")); // false
+console.log(regexFriendlyInsensitive.test("John's username is FRiendlyGuy3929")); // true
+

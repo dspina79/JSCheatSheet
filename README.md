@@ -835,7 +835,7 @@ mySecondPromise.then(result => {
 });
 ```
 ## Regular Expressions
-### Promises
+### Testing
 ```javascript
 // Testing Regex
 
@@ -869,4 +869,39 @@ const helenResult = regexRocks.test(helenFinds);
 console.log(`Rachel result: ${rachelResult}`); // outputs true
 console.log(`Mark result: ${markResult}`); // outputs true
 console.log(`Helen result: ${helenResult}`); // outputs false
+
+// Ignoring case
+// adding "i" at the end of the expression will ignore casing on
+// word matches
+
+const regexFriendlyExact = /friendly/; // must match case sensitive
+const regexFriendlyInsensitive = /friendly/i; // can match any casing
+
+console.log(regexFriendlyExact.test("John's username is FRiendlyGuy3929")); // false
+console.log(regexFriendlyInsensitive.test("John's username is FRiendlyGuy3929")); // true
+
+
+```
+### Matching
+```javascript
+// Regex Pattern Matching
+
+// different than testing
+// actually finds the matching element in the string
+
+const mySentence = "The quick brown fox jumps over the lazy dog.";
+const regexQuick = /QUICK/i;
+
+const matchingQuick = mySentence.match(regexQuick);
+console.log(matchingQuick); 
+/*
+    The above outputs:
+    [
+        'quick',
+        index: 4,
+        input: 'The quick brown fox jumps over the lazy dog.',
+        groups: undefined
+    ]
+*/
+
 ```
