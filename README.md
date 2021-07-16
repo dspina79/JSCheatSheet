@@ -904,4 +904,31 @@ console.log(matchingQuick);
     ]
 */
 
+// matching multiple outputs
+const secondString = "Doug, the barber, worked at the barber shop for 10 years.";
+const secondRegEx = /barber/gi;
+const secondResult = secondString.match(secondRegEx);
+console.log(secondResult); // outputs [ 'barber', 'barber' ]
+
+// matching with an optional character using .
+const optionalCharRegEx = /d.g/;
+const stringChecks = ['dog', 'dug', 'up', 'dg', 'dig', 'ape'];
+for (var i = 0; i < stringChecks.length; i++) {
+    let str = stringChecks[i];
+    let regexTest = optionalCharRegEx.test(str);
+    console.log(`${str} : ${regexTest}`);
+}
+
+/*
+Outputs:
+dog : true
+dug : true
+up : false
+dg : false
+dig : true
+ape : false
+*/
+
+
+
 ```
