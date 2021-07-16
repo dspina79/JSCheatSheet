@@ -43,4 +43,9 @@ dig : true
 ape : false
 */
 
+// match all specific characters
+const specificCharRegex = /wh[eao]m/gi; // gi indicates all matches ignoring case
+const fourthSentence = "Whom is in the east of wham when John whishes?";
+const fourthMathResult = fourthSentence.match(specificCharRegex);
+console.log(fourthMathResult); // outputs [ 'Whom', 'wham' ]
 
