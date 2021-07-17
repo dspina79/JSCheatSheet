@@ -1023,4 +1023,32 @@ Outputs
   'a', 'b'
 ]
 */
+
+// excluding characters in matches with the ^ to indicate not to match
+const excludeHalfAlphabet = /[^n-z]/gi;
+const hamlet = "To be, or not to be; that is the question";
+const hamletResult = hamlet.match(excludeHalfAlphabet);
+console.log(hamletResult);
+
+/*
+Outputs - 
+notice that even whitespace characters and punctuation appear
+=============================================================
+[
+  ' ', 'b', 'e', ',', ' ',
+  ' ', ' ', ' ', 'b', 'e',
+  ';', ' ', 'h', 'a', ' ',
+  'i', ' ', 'h', 'e', ' ',
+  'e', 'i'
+]
+*/
+
+// Wildcards
+
+// matching any consecutive pattern with +
+console.log("work".match(/r+/gi)); // outputs ['r']
+console.log("pizza".match(/z+/gi)); // outputs ['zz']
+console.log("Mississippi".match(/s+/gi)); // ['ss', 'ss']
+console.log("New York".match(/s+/gi)); // outputs null
+
 ```
