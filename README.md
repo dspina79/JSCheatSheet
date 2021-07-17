@@ -1061,6 +1061,39 @@ console.log("Goodwill".match(/Go*/g)); // outputs ['Goo']
 console.log("Gallop!".match(/Go*/g)); // outputs ['G']
 console.log("Doooone!".match(/Go*/g)); // outputs null
 
+// lazy matching using the ? to find the smallest match
+const nonLazyMatchRegex = /@[a-z]+x/;
+const lazyMatchRegex = /@[a-z]+?x/;
+const testLazyMatching = ['@alex', 'alex', '@brimaxex', '@logan', '@x'];
+for (var i = 0; i < testLazyMatching.length; i++) {
+    let resultNonLazy = testLazyMatching[i].match(nonLazyMatchRegex);
+    let resultLazy = testLazyMatching[i].match(lazyMatchRegex);
+    console.log(`\n${testLazyMatching[i]}`);
+    console.log(`Non Lazy: ${resultNonLazy}`);
+    console.log(`Lazy: ${resultLazy}`);
+}
+/*
+Outputs
+=======
+@alex
+Non Lazy: @alex
+Lazy: @alex
 
+alex
+Non Lazy: null
+Lazy: null
+
+@brimaxex
+Non Lazy: @brimaxex
+Lazy: @brimax
+
+@logan
+Non Lazy: null
+Lazy: null
+
+@x
+Non Lazy: null
+Lazy: null
+*/
 
 ```
