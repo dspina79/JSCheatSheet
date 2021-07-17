@@ -173,3 +173,20 @@ Lazy: null
 Non Lazy: null
 Lazy: null
 */
+
+// matching with start ^ and end $
+// note ^ in a list denotes "do not find" while at the 
+// beginning of an expression means "starging with"
+const newSentencePattern = "Abel's username is @abe and his other username is @axeld. His email is abe@xnowhere.net";
+const usernameExample = "@abel";
+const emailExample = "john@xnowhere.net"
+const startingAtRegex = /^@[a-d]+/g; // find all matches starting with @ followed by letters a-d
+const endingAtRegex = /^[a-z]+@xnowhere.net$/gi; //starting with any letter and ending with @
+
+const startingResult = newSentencePattern.match(startingAtRegex);
+console.log(startingResult); // returns null because the sentence does not start with the correct criteria
+const endingResult = newSentencePattern.match(endingAtRegex);
+console.log(endingResult); // returns null because the sentence does not meet the start criteria 
+
+console.log(usernameExample.match(startingAtRegex)); // outputs [ '@ab']
+console.log(emailExample.match(endingAtRegex)); // outputs [ 'john@xnowhere.net' ]
