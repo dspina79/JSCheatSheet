@@ -27,3 +27,10 @@ console.log(`The sentence, '${numericContainingSentence}', contains ${digitCount
 
 console.log(`The sentence, '${numericContainingSentence}', contains ${numberCount} numbers.`);
 // outputs: The sentence, 'Julie picked 10 apples and 209 blueberries.', contains 2 numbers.
+
+// Whitespace Characters: \s
+const sameSentence = "The quick brown fox jumps over the lazy dog.";
+const whitespaceRegex = /\s+/g;
+const whitespaceResults = sameSentence.match(whitespaceRegex);
+console.log(whitespaceResults.length); // outputs 8
+
