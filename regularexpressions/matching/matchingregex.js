@@ -49,3 +49,55 @@ const fourthSentence = "Whom is in the east of wham when John whishes?";
 const fourthMathResult = fourthSentence.match(specificCharRegex);
 console.log(fourthMathResult); // outputs [ 'Whom', 'wham' ]
 
+// matching character ranges using [letter-letter]
+// example
+const alphabetRegex = /[a-z]/gi; // matches all letters a-z case insensitve
+const myLongSentence = "Brian and Peter went to 100 main street.";
+const longSentenceResults = myLongSentence.match(alphabetRegex);
+console.log(longSentenceResults);
+
+/*
+Outputs (note there is no match on the numbers)
+===============================================
+[
+  'B', 'r', 'i', 'a', 'n', 'a',
+  'n', 'd', 'P', 'e', 't', 'e',
+  'r', 'w', 'e', 'n', 't', 't',
+  'o', 'm', 'a', 'i', 'n', 's',
+  't', 'r', 'e', 'e', 't'
+]
+*/
+
+// matching letters and numbers
+const myAlphaNumericRegex = /[a-z0-9]/gi; // matches all letters and numbers
+const longSentenceAlphaNumericResult = myLongSentence.match(myAlphaNumericRegex);
+console.log(longSentenceAlphaNumericResult);
+
+/*
+Outputs
+=======
+  'B', 'r', 'i', 'a', 'n', 'a',
+  'n', 'd', 'P', 'e', 't', 'e',
+  'r', 'w', 'e', 'n', 't', 't',
+  'o', '1', '0', '0', 'm', 'a',
+  'i', 'n', 's', 't', 'r', 'e',
+  'e', 't'
+]
+*/
+
+// smaller alpha numeric sets
+const mySmallerAlphaNumericRegex = /[a-f0-2]/gi;
+const myShorterSentence = "There are 4023 different ways to think about possums.";
+const shorterSentenceResult = myShorterSentence.match(mySmallerAlphaNumericRegex);
+console.log(shorterSentenceResult);
+
+/*
+Outputs
+=======
+[
+  'e', 'e', 'a', 'e',
+  '0', '2', 'd', 'f',
+  'f', 'e', 'e', 'a',
+  'a', 'b'
+]
+*/
