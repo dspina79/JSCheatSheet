@@ -124,7 +124,19 @@ notice that even whitespace characters and punctuation appear
 // Wildcards
 
 // matching any consecutive pattern with +
+// must have one or more times
 console.log("work".match(/r+/gi)); // outputs ['r']
 console.log("pizza".match(/z+/gi)); // outputs ['zz']
 console.log("Mississippi".match(/s+/gi)); // ['ss', 'ss']
 console.log("New York".match(/s+/gi)); // outputs null
+console.log("permission".match(/is+/g)); // outputs [ 'iss' ]
+console.log("Lisa".match(/is+/g)); // outputs [ 'is' ]
+console.log("posse".match(/is+/g)); // outputs null
+
+// matching one or more of the same character
+console.log("Gooooooooaallll!".match(/Go*/g)); // outputs [ 'Goooooooo' ]
+console.log("Goodwill".match(/Go*/g)); // outputs ['Goo']
+console.log("Gallop!".match(/Go*/g)); // outputs ['G']
+console.log("Doooone!".match(/Go*/g)); // outputs null
+
+
