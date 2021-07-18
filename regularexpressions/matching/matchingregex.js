@@ -190,3 +190,20 @@ console.log(endingResult); // returns null because the sentence does not meet th
 
 console.log(usernameExample.match(startingAtRegex)); // outputs [ '@ab']
 console.log(emailExample.match(endingAtRegex)); // outputs [ 'john@xnowhere.net' ]
+
+// optional use of character with ?
+// indicates the preceeding element may be included (0 or 1)
+
+const optionalElement = /Michell?e/; // handles optional l for the name "Michelle" or "Michele"
+const michelles = ["Michelle", "Michele", "Michellle"];
+for (var i = 0; i < michelles.length; i++) {
+    console.log(`${michelles[i]}: ${optionalElement.test(michelles[i])}`);
+}
+
+/*
+Outputs
+=======
+Michelle: true
+Michele: true
+Michellle: false
+*/
