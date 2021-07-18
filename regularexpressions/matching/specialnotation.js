@@ -28,9 +28,30 @@ console.log(`The sentence, '${numericContainingSentence}', contains ${digitCount
 console.log(`The sentence, '${numericContainingSentence}', contains ${numberCount} numbers.`);
 // outputs: The sentence, 'Julie picked 10 apples and 209 blueberries.', contains 2 numbers.
 
+
+// \D = non digit characters
+const nonDigitSentence = "I saw 100 dogs, each with 20 white spots.";
+console.log(nonDigitSentence.match(/\D/g));
+/*
+Outputs
+=======
+[
+  'I', ' ', 's', 'a', 'w', ' ', ' ',
+  'd', 'o', 'g', 's', ',', ' ', 'e',
+  'a', 'c', 'h', ' ', 'w', 'i', 't',
+  'h', ' ', ' ', 'w', 'h', 'i', 't',
+  'e', ' ', 's', 'p', 'o', 't', 's',
+  '.'
+]
+*/
+
 // Whitespace Characters: \s
 const sameSentence = "The quick brown fox jumps over the lazy dog.";
 const whitespaceRegex = /\s+/g;
 const whitespaceResults = sameSentence.match(whitespaceRegex);
 console.log(whitespaceResults.length); // outputs 8
+
+// \S = non whitespace characters
+const nonWhitespaceRegex = /\S+/g;
+console.log(sameSentence.match(nonWhitespaceRegex).length); // outputs 9 (words)
 
