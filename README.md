@@ -1405,4 +1405,11 @@ Outputs
   'Craig'
 ]
 */
+
+// Finding an Element using indexOf()
+// format: arr.indexOf(arr, elem) returns the index of the found element (elem) in
+// the array (arr) or -1 if it is not found
+const searchArray = ["cat", "dog", "bird", "hamster"];
+console.log(searchArray.indexOf("bird")); // outputs 2
+console.log(searchArray.indexOf("rat")); // outputs -1
 ```
