@@ -1379,4 +1379,30 @@ console.log(anotherTooManyElements); // outputs [ 1, 2, 3, 20, 21, 22, 8, 9, 10 
 const smallerArray = ["Bob", "Lisa", "Ted", "Helen"];
 smallerArray.splice(2, 0, "Sharon", "Victoria"); // new elements starting at index 2
 console.log(smallerArray); // outputs [ 'Bob', 'Lisa', 'Sharon', 'Victoria', 'Ted', 'Helen' ]
+
+// Exctract Array Contents using Slice
+// format: arr.slice(x, y) where x = starting index and y = the index up to, but not including, the slice
+const simpleArray = [0, 1, 2, 3, 4, 5, 6, 7];
+const newSimpleArray = simpleArray.slice(2, 5);
+console.log(newSimpleArray); // outputs [2, 3, 4]
+
+// Copy Entire Array with Spread (...)
+const cloneSimple = [...simpleArray];
+console.log(cloneSimple); // outputs [0, 1, 2, 3, 4, 5, 6, 7];
+
+// using spread to copy in parts of an array
+const teamA = ['Shelly', 'Bernice', 'Nigel'];
+const teamB = ['Doug', 'Laura', 'Craig'];
+const teamAwesome = ['Helen', ...teamA, ...teamB];
+console.log(teamAwesome);
+/*
+Outputs
+=======
+[
+  'Helen',   'Shelly',
+  'Bernice', 'Nigel',
+  'Doug',    'Laura',
+  'Craig'
+]
+*/
 ```
