@@ -1322,7 +1322,7 @@ true - boolean
 */
 ```
 ## Basic Data Structures
-### Console and Type Determination
+### Arrays
 ```javascript
 // Arrays
 // collection of mixed data types
@@ -1412,4 +1412,90 @@ Outputs
 const searchArray = ["cat", "dog", "bird", "hamster"];
 console.log(searchArray.indexOf("bird")); // outputs 2
 console.log(searchArray.indexOf("rat")); // outputs -1
+
+// multidimsenional & nested arrays
+const multidimenionArray = [
+    [1, 3, 5, 7],
+    [2, 4, 6, 8]
+];
+
+// to get 4 use:
+const four = multidimenionArray[1][1];
+console.log(four);
+
+// deeply nested arrays
+const nestedArray = [
+    "first_level", [
+        "second_level", [
+            "third_level", [
+                "and_deeper"
+            ]
+        ]
+    ]
+];
+
+console.log(nestedArray[1][1][1][0]); // outputs  "and_deeper"
+```
+### Objects
+```javascript
+// Objects use key:value notation
+
+const simplePerson = {
+    firstName: "Brenda",
+    lastName: "Sheridan",
+    age: 28
+};
+
+// use dot or bracket notation to get/set variables
+console.log(simplePerson['firstName']); // outputs Brenda
+console.log(simplePerson.firstName); // outputs Brenda
+
+// changing values for both
+simplePerson['age'] = 30;
+simplePerson.lastName = 'Williams';
+
+// more complex objects can have nested properties
+
+const complexPerson = {
+    name: {
+        firstName: "Jessica",
+        lastName: "Minelli",
+        middleName: "Ann"
+    },
+    email: "jessica9393@nowhere.net",
+    address: {
+        street: {
+            number: 39,
+            name: "Terrace Drive"
+        },
+        city: "Rochester",
+        state: "NY",
+        postalCode: "14662"
+    }
+};
+
+console.log(complexPerson.address.street.number); // outputs 39
+
+// set new value
+complexPerson.address.street.number = 76;
+console.log(complexPerson.address.street.number); // outputs 76
+
+// Delete Keyword
+// Using the delete keyword removes a property
+console.log(simplePerson);
+/* 
+Outputs
+=======
+{ firstName: 'Brenda', lastName: 'Williams', age: 30 }
+*/
+
+delete simplePerson.age; // removes the age property
+
+console.log(simplePerson);
+/* 
+Outputs
+=======
+{ firstName: 'Brenda', lastName: 'Williams' }
+*/
+
 ```

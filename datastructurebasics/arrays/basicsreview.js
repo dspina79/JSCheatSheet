@@ -86,3 +86,26 @@ Outputs
 const searchArray = ["cat", "dog", "bird", "hamster"];
 console.log(searchArray.indexOf("bird")); // outputs 2
 console.log(searchArray.indexOf("rat")); // outputs -1
+
+// multidimsenional & nested arrays
+const multidimenionArray = [
+    [1, 3, 5, 7],
+    [2, 4, 6, 8]
+];
+
+// to get 4 use:
+const four = multidimenionArray[1][1];
+console.log(four);
+
+// deeply nested arrays
+const nestedArray = [
+    "first_level", [
+        "second_level", [
+            "third_level", [
+                "and_deeper"
+            ]
+        ]
+    ]
+];
+
+console.log(nestedArray[1][1][1][0]); // outputs  "and_deeper"
