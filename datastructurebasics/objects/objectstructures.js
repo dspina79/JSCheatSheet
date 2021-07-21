@@ -57,3 +57,67 @@ Outputs
 =======
 { firstName: 'Brenda', lastName: 'Williams' }
 */
+
+
+// hasOwnProperty Method
+// determines of an objects property exists
+
+console.log(simplePerson.hasOwnProperty('firstName')); // outputs true
+console.log(simplePerson.hasOwnProperty('lastName')); // outputs true
+console.log(simplePerson.hasOwnProperty('age')); // outputs false
+
+
+// Using for ... in to Get Properties
+
+const departments = {
+    "IT": {
+        "numberMembers": 20,
+        "formalName" : "Information Technologies",
+        "generatesRevenue": false
+    },
+    "Retail": {
+        "numberMembers": 391,
+        "formalName" : "Retail Merchants",
+        "generatesRevenue": true
+    },
+    "Engineering": {
+        "numberMembers": 80,
+        "formalName" : "Engineering and Development",
+        "generatesRevenue": false
+    },
+    "DIST": {
+        "numberMembers": 129,
+        "formalName" : "Distribution",
+        "generatesRevenue": true
+    }
+}
+
+// output the names of each deparment using for ... in
+
+for (let dept in departments) {
+    console.log(dept);
+}
+
+/*
+Outputs
+=======
+IT
+Retail
+Engineering
+DIST
+*/
+
+// get the total of all employees that help generate revenue
+let revenueCount = 0;
+for (let dept in departments) {
+    if (departments[dept].generatesRevenue) {
+        revenueCount += departments[dept].numberMembers;
+    }
+}
+
+console.log(revenueCount); // outputs 520
+
+// Object.keys
+// another method to get all property key names for an object
+const deptKeys = Object.keys(departments);
+console.log(deptKeys); // outputs [ 'IT', 'Retail', 'Engineering', 'DIST' ]
