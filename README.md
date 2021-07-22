@@ -1573,3 +1573,36 @@ console.log(`32 degrees F = ${toCelsius(32)}C`);
 // convert 100 degrees c
 console.log(`100 degrees C = ${toFarenheit(100)}F`);
 ```
+### String Reversal
+```javascript
+const reverseString = (str) => {
+    let retStr = '';
+    for (let i = str.length - 1; i >= 0; i--) {
+        retStr += str[i];
+    }
+
+    return retStr;
+};
+
+// test it
+const strs = ["bob", "believe", "washington", "peaches"];
+
+for (let str of strs) {
+    console.log(`${str} reversed is ${reverseString(str)}`);
+}
+```
+### Factorials
+```javascript
+const factorial = (num) => {
+    if (num <= 1) {
+        return 1;
+    }
+
+    return num * factorial(num - 1);
+};
+
+// test it out
+for (let i = 1; i < 7; i++) {
+    console.log(`${i}! = ${factorial(i)}`);
+}
+```
