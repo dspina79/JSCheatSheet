@@ -1663,3 +1663,22 @@ const testFunc = (x) => x % 2 === 0 && x % 3 === 0;
 const result = findElement(arr, testFunc);
 console.log(result); // outputs 6
 ```
+### Title Case a Phrase
+```javascript
+// Title Case a Phrase
+function titleCase(str) {
+    let result = "";
+    for (let i = 0; i < str.length; i++) {
+        let letter = str[i];
+        if (i === 0 || str[i - 1] === " ") {
+        letter = letter.toUpperCase();
+        } else  {
+        letter = letter.toLowerCase();
+        }
+        result += letter;
+    }
+    return result;
+}
+  
+titleCase("I'm a little tea pot");
+```
