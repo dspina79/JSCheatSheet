@@ -1606,3 +1606,60 @@ for (let i = 1; i < 7; i++) {
     console.log(`${i}! = ${factorial(i)}`);
 }
 ```
+### Longest Word Determination
+```javascript
+// find the longest word in a string
+function findLongestWord(str) {
+    const strs = str.match(/\w+/g);
+    let longestWord = '';
+    for (let str of strs) {
+        if (str.length > longestWord.length) {
+            longestWord = str;
+        }
+    }
+    return longestWord;
+}
+
+// test it
+const sentenceToTest = "The once was a man who knew too little but ate a number of things.";
+const longestWord = findLongestWord(sentenceToTest);
+console.log(longestWord);
+```
+### String Truncation
+```javascript
+// Truncate a String
+// Strings longer than num will end with elipses (...)
+
+function truncateString(str, num) {
+    if (str.length > num) {
+        let testStr = "";
+        for (let i = 0; i < num; i++) {
+        testStr += str[i];
+        }
+        return testStr + "...";
+    }
+
+    return str;
+}
+  
+console.log(truncateString("The quick brown fox jumps over the lazy dog", 10));
+// ^^^ outputs "The quick ..."
+```
+### Find Element
+```javascript
+// Find an Element by an Anonymous Function
+function findElement(arr, func) {
+    for (let i = 0; i < arr.length; i++) {
+        if (func(arr[i])) {
+        return arr[i];
+        }
+    }
+
+    return undefined;
+}
+  
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const testFunc = (x) => x % 2 === 0 && x % 3 === 0;
+const result = findElement(arr, testFunc);
+console.log(result); // outputs 6
+```
