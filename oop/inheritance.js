@@ -47,7 +47,20 @@ Dog.prototype.hunt = function() {
     console.log(`${this.name} starts sniffing around.`);
 };
 
+// override methods
+Dog.prototype.sleep = function(hours) {
+    console.log(`${this.name} sleeps with one eye open for ${hours} hours.`);
+}
+
 let snuffles = new Dog("Snuffles");
 snuffles.eat();
 snuffles.sleep(4);
 snuffles.hunt();
+
+/*
+Outputs
+=======
+Snuffles eats!
+Snuffles sleeps with one eye open for 4 hours.
+Snuffles starts sniffing around.
+*/

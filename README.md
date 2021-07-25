@@ -1998,8 +1998,79 @@ Dog.prototype.hunt = function() {
     console.log(`${this.name} starts sniffing around.`);
 };
 
+// override methods
+Dog.prototype.sleep = function(hours) {
+    console.log(`${this.name} sleeps with one eye open for ${hours} hours.`);
+}
+
 let snuffles = new Dog("Snuffles");
 snuffles.eat();
 snuffles.sleep(4);
 snuffles.hunt();
+
+/*
+Outputs
+=======
+Snuffles eats!
+Snuffles sleeps with one eye open for 4 hours.
+Snuffles starts sniffing around.
+*/
+
+```
+### Mixins
+```javascript
+// Mixins to Add Properties
+
+// Mixins are interesting functions that are used to add
+// the same functionality to disparate objects.
+
+function Coin(denomonation){
+    this.denomonation = denomonation;
+}
+
+function Star(name, lightYearsAway) {
+    this.name = name;
+    this.lightYearsAway = lightYearsAway;
+}
+
+Star.prototype = {
+    constructor: Star,
+    fuse: function() {
+        console.log(`${this.name} is making new atoms using nuclear fusion.`);
+    }
+}
+
+// Create the Mixin to give the ability to shine for both
+// Stars and Coins
+
+function shineMixin(obj) {
+    obj.shine = function() {
+        console.log("Shining Bright!!");
+    }
+}
+
+let penny = new Coin(0.01);
+let proxima = new Star("Proxima Centauri", 4);
+
+shineMixin(penny);
+shineMixin(proxima);
+
+console.log("Penny\n=====");
+penny.shine();
+console.log("\nProxima\n=======");
+proxima.shine();
+proxima.fuse();
+
+/*
+Outputs
+=======
+Penny
+=====
+Shining Bright!!
+
+Proxima
+=======
+Shining Bright!!
+Proxima Centauri is making new atoms using nuclear fusion.
+*/
 ```
