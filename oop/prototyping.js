@@ -90,5 +90,10 @@ Book.prototype = {
     }
 }
 
+// testing if the prototype controls the object
+let shining = new Book("The Shining", "Stephen King");
+const protoCheck = Book.prototype.isPrototypeOf(shining);
+console.log(protoCheck); // outputs true
+
 let taleOfTwoCities = new Book("A Tale of Two Cities", "Charles Dickens");
 console.log(taleOfTwoCities.constructor === Book); //outputs true
