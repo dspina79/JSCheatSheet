@@ -41,3 +41,20 @@ testVariableScope();
  var myQueueLength = addToFixedQueue(myFixedQueue, 7);
 console.log(myFixedQueue); // [2,3,4,5,6,7]
 console.log(myQueueLength); // 6
+
+
+// Using Immediately Invoked Function Expression (IIFE)
+// also known as anonymous functions
+
+// non anonymous method
+function doubleIt(n) {
+    console.log(n * 2);
+}
+
+doubleIt(5); // outputs 10
+
+// anonymous or IIFE
+// the method is not named; it's anonymous
+(function (n) {
+    console.log(n * 2);
+})(10); // outputs 20

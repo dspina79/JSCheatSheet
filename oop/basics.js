@@ -85,3 +85,27 @@ cat.name is present.
 cat.age is present.
 cat.furColor is present.
 */
+
+
+// Privatizing Properties Using Closures
+
+// first use the let assignment for the property
+// then create a privilaged method to get and set
+// the property values
+
+function Rock() {
+    let mass = 0;
+
+    this.getMass = function() {
+        return mass;
+    }
+
+    this.setMass = function(newMass) {
+        mass = newMass;
+    }
+}
+
+let pebble = new Rock();
+console.log(pebble.getMass()); // outputs 0
+pebble.setMass(1);
+console.log(pebble.getMass()); // outputs 1

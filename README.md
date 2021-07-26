@@ -165,6 +165,23 @@ testVariableScope();
  var myQueueLength = addToFixedQueue(myFixedQueue, 7);
 console.log(myFixedQueue); // [2,3,4,5,6,7]
 console.log(myQueueLength); // 6
+
+
+// Using Immediately Invoked Function Expression (IIFE)
+// also known as anonymous functions
+
+// non anonymous method
+function doubleIt(n) {
+    console.log(n * 2);
+}
+
+doubleIt(5); // outputs 10
+
+// anonymous or IIFE
+// the method is not named; it's anonymous
+(function (n) {
+    console.log(n * 2);
+})(10); // outputs 20
 ```
 ### Conditionals
 ```javascript
@@ -1843,6 +1860,30 @@ cat.name is present.
 cat.age is present.
 cat.furColor is present.
 */
+
+
+// Privatizing Properties Using Closures
+
+// first use the let assignment for the property
+// then create a privilaged method to get and set
+// the property values
+
+function Rock() {
+    let mass = 0;
+
+    this.getMass = function() {
+        return mass;
+    }
+
+    this.setMass = function(newMass) {
+        mass = newMass;
+    }
+}
+
+let pebble = new Rock();
+console.log(pebble.getMass()); // outputs 0
+pebble.setMass(1);
+console.log(pebble.getMass()); // outputs 1
 ```
 ### Prototypes
 ```javascript
@@ -2073,4 +2114,22 @@ Proxima
 Shining Bright!!
 Proxima Centauri is making new atoms using nuclear fusion.
 */
+
+// Creating Modules of Mixins Using Anonymous Methods
+let funModule = (function() {
+    return {
+      isCuteMixin: function(obj) {
+          obj.isCute = function() {
+          return true;
+      };
+    },
+    singMixin: function(obj) {
+      obj.sing = function() {
+        console.log("Singing to an awesome tune");
+      }
+    }
+    }
+  })();
+
+  
 ```

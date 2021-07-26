@@ -52,3 +52,21 @@ Proxima
 Shining Bright!!
 Proxima Centauri is making new atoms using nuclear fusion.
 */
+
+// Creating Modules of Mixins Using Anonymous Methods
+let funModule = (function() {
+    return {
+      isCuteMixin: function(obj) {
+          obj.isCute = function() {
+          return true;
+      };
+    },
+    singMixin: function(obj) {
+      obj.sing = function() {
+        console.log("Singing to an awesome tune");
+      }
+    }
+    }
+  })();
+
+  
