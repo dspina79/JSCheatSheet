@@ -2263,4 +2263,21 @@ Outputs
   { name: 'Brandon', id: 12737 }
 ]
 */
+
+
+// filtering from a prototype
+
+Array.prototype.numberFilter = function(condition) {
+    let filtered = [];
+    for (var i = 0; i < this.length; i++) {
+        if (condition(this[i])) {
+            filtered.push(this[i]);
+        }
+    }
+    return filtered;
+};
+
+const numbers = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512];
+var protoFiltered = numbers.numberFilter(n => (n + 1) % 5 === 0);
+console.log(protoFiltered); // outputs [ 4, 64 ]
 ```
