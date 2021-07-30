@@ -1407,6 +1407,20 @@ console.log(newSimpleArray); // outputs [2, 3, 4]
 const cloneSimple = [...simpleArray];
 console.log(cloneSimple); // outputs [0, 1, 2, 3, 4, 5, 6, 7];
 
+// Combine Array Elements with concat(...)
+// note: this method is non mutating
+const firstNumberArray = [1, 2, 3, 4, 5];
+const secondNumberArray = [6, 7, 8];
+let combinedArray = firstNumberArray.concat(secondNumberArray);
+console.log("Concatenated array: " + combinedArray);
+// ^^^ outputs Concatenated array: 1,2,3,4,5,6,7,8
+
+// you can even add one element
+combinedArray = combinedArray.concat(10);
+console.log("Concatenated array: " + combinedArray);
+// ^^^ outputs Concatenated array: 1,2,3,4,5,6,7,8,10
+
+
 // using spread to copy in parts of an array
 const teamA = ['Shelly', 'Bernice', 'Nigel'];
 const teamB = ['Doug', 'Laura', 'Craig'];
