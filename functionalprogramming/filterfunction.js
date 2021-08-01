@@ -53,3 +53,17 @@ Array.prototype.numberFilter = function(condition) {
 const numbers = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512];
 var protoFiltered = numbers.numberFilter(n => (n + 1) % 5 === 0);
 console.log(protoFiltered); // outputs [ 4, 64 ]
+
+
+// using filter to remove elements from an array
+// provided one or more additional arguments
+function removeElements(arr) {
+    let sourceArray = arguments[0];
+    for (var i = 1; i < arguments.length; i++) {
+      sourceArray = sourceArray.filter(x => x !== arguments[i]);
+    }
+    return sourceArray;
+}
+const startingArray = ["a", 1929, 13, 10, false, "saffron"];
+const clearedArray = removeElements(startingArray, 10, "a");
+console.log(clearedArray); // outputs [ 1929, 13, false, 'saffron' ]

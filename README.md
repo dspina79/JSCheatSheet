@@ -178,10 +178,43 @@ function doubleIt(n) {
 doubleIt(5); // outputs 10
 
 // anonymous or IIFE
-// the method is not named; it's anonymous
+// the method is not named; it's anonymousx
 (function (n) {
     console.log(n * 2);
 })(10); // outputs 20
+
+
+// Arguments Object
+// the arguments object allows you to parse out each argument
+// sent to the function
+
+// display all arguments sent to the 
+function iterateElements(elements) {
+    for (var i = 0; i < arguments.length; i++) {
+        console.log(arguments[i]);
+    }
+}
+
+iterateElements("element1", "element2", "element3", "element4", "element5");
+/*
+Outputs
+=======
+element1
+element2
+element3
+element4
+element5
+*/
+
+iterateElements("this", "is", 1);
+/*
+Outputs
+=======
+this
+is
+1
+*/
+
 ```
 ### Conditionals
 ```javascript
@@ -2294,6 +2327,20 @@ Array.prototype.numberFilter = function(condition) {
 const numbers = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512];
 var protoFiltered = numbers.numberFilter(n => (n + 1) % 5 === 0);
 console.log(protoFiltered); // outputs [ 4, 64 ]
+
+
+// using filter to remove elements from an array
+// provided one or more additional arguments
+function removeElements(arr) {
+    let sourceArray = arguments[0];
+    for (var i = 1; i < arguments.length; i++) {
+      sourceArray = sourceArray.filter(x => x !== arguments[i]);
+    }
+    return sourceArray;
+}
+const startingArray = ["a", 1929, 13, 10, false, "saffron"];
+const clearedArray = removeElements(startingArray, 10, "a");
+console.log(clearedArray); // outputs [ 1929, 13, false, 'saffron' ]
 ```
 ### sort
 ```javascript

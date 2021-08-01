@@ -54,7 +54,39 @@ function doubleIt(n) {
 doubleIt(5); // outputs 10
 
 // anonymous or IIFE
-// the method is not named; it's anonymous
+// the method is not named; it's anonymousx
 (function (n) {
     console.log(n * 2);
 })(10); // outputs 20
+
+
+// Arguments Object
+// the arguments object allows you to parse out each argument
+// sent to the function
+
+// display all arguments sent to the 
+function iterateElements(elements) {
+    for (var i = 0; i < arguments.length; i++) {
+        console.log(arguments[i]);
+    }
+}
+
+iterateElements("element1", "element2", "element3", "element4", "element5");
+/*
+Outputs
+=======
+element1
+element2
+element3
+element4
+element5
+*/
+
+iterateElements("this", "is", 1);
+/*
+Outputs
+=======
+this
+is
+1
+*/
