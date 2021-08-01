@@ -2380,4 +2380,12 @@ Outputs
 [ 'To', 'be', 'or', 'not', 'to', 'be' ]
 */
 
+// Join Function
+// the join(...) operation takes an array and generates a string
+// adding a delimiter between each element in the resulting
+// scalar string value
+const strArray = ["There", "is", "something", "under", "the", "bed."];
+const strFromArray = strArray.join(" "); // separates each element with a space
+console.log(strFromArray); // outputs There is something under the bed.
+
 ```
