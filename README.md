@@ -1837,7 +1837,6 @@ function findObject(collection, objectPattern) {
   }
   
 ```
-```
 ### Pig Latin Converter
 ```javascript
 // Converts a string to Pig Latin
@@ -1857,6 +1856,87 @@ function translatePigLatin(str) {
     }
     return arr.join(" ");
 }  
+```
+### DNA Compliments
+```javascript
+// DNA Compliments
+// returns an array of arrays of DNA complimentary pairs
+// assuming an input sequence (e.g. "ATC")
+
+function pairElement(str) {
+    let dnaPairs = [];
+    const dnaMap = {
+        G: "C", T: "A", C: "G", A: "T"
+    };
+    for (var s of str) {
+        let match = [s, dnaMap[s]];
+        dnaPairs.push(match);
+    }
+
+    return dnaPairs;
+}
+```
+### Find Missing Letter in a Range
+```javascript
+// Find the Missing Letter in a Range
+// example: findMissingLetter("abcdf") returns "e"
+
+function findMissingLetter(str) {
+    str = str.toLowerCase();
+    let foundLetter = undefined;
+    const letters = "abcdefghijklmnopqrstuvwxyz";
+    const letterArray = letters.split("");
+    const startingLetter = str[0];
+    let startingIndex = 0;
+    for (var i = 0; i < letterArray.length; i++) {
+      if (letterArray[i] === startingLetter) {
+        startingIndex = i;
+        break;
+      }
+    }
+    let index = 0;
+    for (var i = startingIndex; i < letterArray.length; i++) {
+      let goodLetter = letterArray[i];
+      if (str[index] !== letterArray[i]) {
+        foundLetter = letterArray[i];
+        break;
+      }
+      index++;
+    }
+    
+    return foundLetter;
+}
+```
+### HTML Encoder
+```javascript
+// Encodes a String to HTML Format
+// example: toHtml("Alpha & Beta") returns "Alpha &amp; Beta"
+function toHtml(str) {
+    let strArray = str.split("");
+    for (var i = 0; i < strArray.length; i++) {
+      let c = strArray[i];
+      switch (c) {
+        case "&":
+          c = "&amp;";
+          break;
+        case ">" :
+          c = "&gt;";
+          break;
+        case "<" :
+          c = "&lt;";
+          break;
+        case "\"" :
+          c = "&quot;";
+          break;
+        case "'" :
+          c = "&apos;";
+          break;
+      }
+      strArray[i] = c;
+    }
+    return strArray.join("");
+}
+  
 ```
 ## Object Oriented Programming
 ### Basics
