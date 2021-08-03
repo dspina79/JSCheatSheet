@@ -851,6 +851,7 @@ const displayEmployee = ({firstName, lastName, position}) => {
 };
 
 console.log(displayEmployee(myEmployee)); // outputs Smith, Dean - Senior Developer
+
 ```
 ### Classes and Objects
 ```javascript
@@ -880,6 +881,7 @@ const displayEmployee = ({firstName, lastName, position}) => {
 };
 
 console.log(displayEmployee(myEmployee)); // outputs Smith, Dean - Senior Developer
+
 ```
 ### Promises
 ```javascript
@@ -2385,6 +2387,7 @@ function addValue(originalArray, toAppend) {
 const result = addValue(globalVar2, "100");
 console.log(globalVar2); // outputs [ 'five', 'four', 'three' ]
 console.log(result); // outputs [ 'five', 'four', 'three', '100' ]
+
 ```
 ### map
 ```javascript
