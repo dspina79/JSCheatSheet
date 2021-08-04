@@ -1,15 +1,16 @@
 // Number Array Hash
 
-function buildStarterBlock(initialArray) {
+function buildStarterTriangle(initialArray) {
     let arr = [];
-    arr.unshift(intitialArray);
+    arr.unshift(initialArray);
     while(initialArray.length > 1) {
         initialArray = getSumBlock(initialArray);
         arr.unshift(initialArray);
     }
+    return arr;
 }
 
-function getSumTriangle(arr) {
+function getSumOfTriangle(arr) {
     let sums = [];
     let sumsRight = [];
     // left side
@@ -38,11 +39,18 @@ function getSumTriangle(arr) {
 }
 
 function getHashSet(arr, sizeToMeet) {
-    while (arr.length < sizeToMeet) {
-        arr = getSumBlock(arr);
+    const vector = [783, 111, 813, 67];
+    arr.push(...vector);
+    if (sizeToMeet === undefined) {
+        sizeToMeet = arr.length;
     }
-
-    return arr;
+    let triangle = buildStarterTriangle(arr);
+    let result = getSumOfTriangle(triangle);
+    
+    while (result.length != sizeToMeet) {
+        result = getSumBlock(result);
+    }
+    return result;
 }
 
 function getSumBlock(arr) {
@@ -54,6 +62,16 @@ function getSumBlock(arr) {
 }
 
 var testArr = [[0], [0, 1], [0, 1, 2]];
-console.log(getSumTriangle(testArr));
+console.log(getSumOfTriangle(testArr));
 var testArr2 = [[1], [4, 3], [3, 7, 4]];
-console.log(getSumTriangle(testArr2));
+console.log(getSumOfTriangle(testArr2));
+
+var testInput1 = [3, 7, 4];
+const result1 = buildStarterTriangle(testInput1);
+console.log(result1);
+const hashResult = getHashSet(testInput1, 3);
+console.log(hashResult);
+const hashResult1 = getHashSet(testInput1, 2);
+console.log(hashResult1);
+const hashResult2 = getHashSet(testInput1, 1);
+console.log(hashResult2);
