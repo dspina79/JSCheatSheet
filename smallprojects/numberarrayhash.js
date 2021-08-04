@@ -48,7 +48,7 @@ function getHashSet(arr, sizeToMeet) {
 function getSumBlock(arr) {
     let block = [];
     for (var i = 0; i < arr.length - 1; i++) {
-        block.push(arr[i] + arr[i + 1]);
+        block.push(Math.abs(arr[i] - arr[i + 1]));
     }
     return block;
 }
